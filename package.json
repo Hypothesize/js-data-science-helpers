@@ -5,7 +5,7 @@
 	"main": "dist/js-data-science-helpers.js",
 	"scripts": {
 		"test": "./test.sh",
-		"build": "esbuild src/index.js --bundle --outfile=dist/js-data-science-helpers.js --minify",
+		"build": "esbuild src/index.js --bundle --outfile=dist/js-data-science-helpers.js",
 		"watch": "esbuild src/index.js --bundle --outfile=dist/js-data-science-helpers.js --minify --watch",
 		"pub": "npm version patch --force && npm publish --access=public"
 	},
@@ -15,7 +15,7 @@
 		"@jrc03c/js-data-science-helpers": "^0.0.54",
 		"@jrc03c/js-text-tools": "^0.0.7",
 		"@jrc03c/make-key": "^0.0.9",
-		"@sparkwave/js-math-tools": "^0.0.41"
+		"@sparkwave/js-math-tools": "0.0.42"
 	},
 	"devDependencies": {
 		"esbuild": "^0.14.42",
