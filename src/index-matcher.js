@@ -6,7 +6,7 @@ const {
 	isDataFrame,
 	isSeries,
 	isUndefined,
-} = require("@jrc03c/js-math-tools")
+} = require("@sparkwave/js-math-tools")
 
 class IndexMatcher {
 	static DROP_NAN_MODE = "DROP_NAN_MODE"
@@ -33,7 +33,7 @@ class IndexMatcher {
 		Object.values(arguments).forEach(x => {
 			assert(
 				isDataFrame(x) || isSeries(x),
-				"The `IndexMatcher` only works on Series and DataFrames! To drop NaN values in a pair-wise fashion from regular arrays, use the `dropNaNPairwise` function from the @jrc03c/js-math-tools library."
+				"The `IndexMatcher` only works on Series and DataFrames! To drop NaN values in a pair-wise fashion from regular arrays, use the `dropNaNPairwise` function from the @sparkwave/js-math-tools library."
 			)
 
 			if (self.mode === IndexMatcher.DROP_MISSING_MODE) {
@@ -58,7 +58,7 @@ class IndexMatcher {
 		const out = Object.values(arguments).map(x => {
 			assert(
 				isDataFrame(x) || isSeries(x),
-				"The `IndexMatcher` only works on Series and DataFrames! To drop NaN values in a pair-wise fashion from regular arrays, use the `dropNaNPairwise` function from the @jrc03c/js-math-tools library."
+				"The `IndexMatcher` only works on Series and DataFrames! To drop NaN values in a pair-wise fashion from regular arrays, use the `dropNaNPairwise` function from the @sparkwave/js-math-tools library."
 			)
 
 			return x.get(self.index, null)

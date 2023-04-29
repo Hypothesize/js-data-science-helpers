@@ -1,34 +1,34 @@
 const {
-  dropNaN,
-  isArray,
-  isDataFrame,
-  isNumber,
-  isSeries,
-  pow,
-  sqrt,
-  sum,
-} = require("@jrc03c/js-math-tools")
+	dropNaN,
+	isArray,
+	isDataFrame,
+	isNumber,
+	isSeries,
+	pow,
+	sqrt,
+	sum,
+} = require("@sparkwave/js-math-tools")
 
 const common = require("./common")
 
 function getMagnitude(x) {
-  if (isDataFrame(x) || isSeries(x)) {
-    return getMagnitude(x.values)
-  }
+	if (isDataFrame(x) || isSeries(x)) {
+		return getMagnitude(x.values)
+	}
 
-  if (isNumber(x)) {
-    return Math.abs(x)
-  }
+	if (isNumber(x)) {
+		return Math.abs(x)
+	}
 
-  if (isArray(x)) {
-    if (common.shouldIgnoreNaNValues) {
-      x = dropNaN(x)
-    }
+	if (isArray(x)) {
+		if (common.shouldIgnoreNaNValues) {
+			x = dropNaN(x)
+		}
 
-    return sqrt(sum(pow(x, 2)))
-  }
+		return sqrt(sum(pow(x, 2)))
+	}
 
-  return NaN
+	return NaN
 }
 
 module.exports = getMagnitude
