@@ -1,6 +1,6 @@
 {
 	"name": "@sparkwave/js-data-science-helpers",
-	"version": "0.0.57",
+	"version": "0.0.58",
 	"description": "some data science functions and classes to complement js-math-tools",
 	"main": "dist/js-data-science-helpers.js",
 	"scripts": {
